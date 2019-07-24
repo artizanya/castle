@@ -1,6 +1,6 @@
 // const Koa = require('koa');
 // const { ApolloServer, gql } = require('apollo-server-koa');
-import * as Koa from 'koa';
+import Koa from 'koa';
 import { ApolloServer, gql } from 'apollo-server-koa';
 
 // Construct a schema, using GraphQL schema language
