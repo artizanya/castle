@@ -19,16 +19,13 @@
     "noUnusedLocals": true,
     "noUnusedParameters": false,
     "preserveConstEnums": true,
-    "removeComments": false,
+    "removeComments": true,
     "strict": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
   },
   "exclude": [
     "node_modules",
-    ".next",
     ".project",
-    "sandbox",
-    "external"
   ]
 }
