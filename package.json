@@ -1,0 +1,36 @@
+{
+  "name": "artizanya-castle",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint -c eslint.config.js --ignore-path .gitignore --ignore-path .lintignore --ext .js,.jsx,.ts,.tsx ."
+  },
+  "keywords": [],
+  "author": "Victor Rybynok",
+  "license": "GPL-3.0",
+  "eslintConfig": {
+    "extends": "./eslint.config.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "apollo-server-koa": "^2.7.0",
+    "graphql": "^14.4.2",
+    "koa": "^2.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "eslint": "^5.3.0",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "typescript": "^3.5.2"
+  }
+}

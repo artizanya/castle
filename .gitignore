@@ -1,0 +1,9 @@
+# dependencies
+/node_modules
+
+# generators
+
+# building
+
+# misc
+.tern-port
