@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     // "outDir": "build/dist",
-    "noEmit": true,
-    "module": "esnext",
+    // "noEmit": true,
+    "module": "commonjs",
     "maxNodeModuleJsDepth": 10,
     "allowSyntheticDefaultImports": true,
-    "target": "esnext"
-    "lib": ["es2018", "dom", "esnext.asynciterable"],
+    "target": "esnext",
+    "lib": ["esnext", "dom", "esnext.asynciterable"],
     "sourceMap": true,
-    "checkJs": true,
+    // "allowJs": true,
+    // "checkJs": true,
     "jsx": "preserve",
     "moduleResolution": "node",
     "newLine": "lf",

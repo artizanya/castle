@@ -4,6 +4,7 @@
 # generators
 
 # building
+/bazel-*
 
 # misc
 .tern-port
