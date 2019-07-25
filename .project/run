@@ -1,3 +1,4 @@
 #!/bin/bash
 
-npm run dev
+cd ../bazel-bin
+node index.js
