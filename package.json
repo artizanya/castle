@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "apollo-server-koa": "^2.7.0",
+    "arangojs": "^6.10.0",
     "graphql": "^14.4.2",
     "koa": "^2.7.0",
     "reflect-metadata": "^0.1.13",

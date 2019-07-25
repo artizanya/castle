@@ -10,5 +10,6 @@ ts_library(
     "@npm//@types/koa",
     "@npm//apollo-server-koa",
     "@npm//type-graphql",
+    "@npm//arangojs",
   ],
 )

@@ -1,4 +1,4 @@
-import "reflect-metadata";
+import 'reflect-metadata';
 
 // const Koa = require('koa');
 // const { ApolloServer, gql } = require('apollo-server-koa');
@@ -9,13 +9,41 @@ import {
   // gql,
 } from 'apollo-server-koa';
 
+import {
+  Database,
+  // aql,
+} from 'arangojs';
+
 import { Resolver, Query, buildSchemaSync } from 'type-graphql';
+
+// const landDb = new Database();
+
+const landDb = new Database({
+  url: 'http://localhost:8529',
+});
+
+// landDb.useDatabase('_system');
+landDb.useBasicAuth('root', 'artizan0');
+
+const elements = landDb.collection('land_elements');
+
+(async function() {
+  const element = await elements.firstExample({
+    _key: '0005',
+  });
+
+  console.log(element);
+})();
 
 @Resolver()
 class HelloWorldResolver {
   @Query(returns => String)
   async hello(): Promise<string> {
-    return this.helloMessage;
+    const element = await elements.firstExample({
+      _key: '0005',
+    });
+
+    return `${this.helloMessage}, ${element.description}`;
   }
 
   private helloMessage = 'Hello world!';
