@@ -26,7 +26,7 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.5.5",
-    "@bazel/typescript": "file:../rules_nodejs/dist/npm_bazel_typescript",
+    "@bazel/typescript": "file:.meta/bazel-nodejs-rules/release/npm_bazel_typescript",
     "@types/graphql": "^14.2.3",
     "@types/koa": "^2.0.49",
     "@typescript-eslint/eslint-plugin": "^1.11.0",

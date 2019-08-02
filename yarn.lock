@@ -155,7 +155,7 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bazel/typescript@file:../rules_nodejs/dist/npm_bazel_typescript":
+"@bazel/typescript@file:.meta/bazel-nodejs-rules/release/npm_bazel_typescript":
   version "1.2.3"
   dependencies:
     protobufjs "6.8.8"
