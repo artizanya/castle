@@ -35,11 +35,11 @@ local_repository(
   path = metaPath + "/bazel-nodejs-rules/release/build_bazel_rules_nodejs/release",
 )
 
-new_local_repository(
-  name = "npm_bazel_typescript",
-  path = metaPath + "/bazel-nodejs-rules/release/npm_bazel_typescript",
-  build_file = metaPath + "/bazel-nodejs-rules/release/npm_bazel_typescript/BUILD.bazel",
-)
+# new_local_repository(
+#   name = "npm_bazel_typescript",
+#   path = metaPath + "/bazel-nodejs-rules/release/npm_bazel_typescript",
+#   build_file = metaPath + "/bazel-nodejs-rules/release/npm_bazel_typescript/BUILD.bazel",
+# )
 
 # Download npm dependencies
 load("@build_bazel_rules_nodejs//:defs.bzl", "yarn_install")
@@ -50,9 +50,9 @@ yarn_install(
   yarn_lock = "//:yarn.lock",
 )
 
-# load("@npm//:install_bazel_dependencies.bzl", "install_bazel_dependencies")
+load("@npm//:install_bazel_dependencies.bzl", "install_bazel_dependencies")
 
-# install_bazel_dependencies()
+install_bazel_dependencies()
 
 load("@npm_bazel_typescript//:defs.bzl", "ts_setup_workspace")
 
