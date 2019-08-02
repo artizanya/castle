@@ -41,6 +41,7 @@ new_local_repository(
   build_file = metaPath + "/bazel-nodejs-rules/release/npm_bazel_typescript/BUILD.bazel",
 )
 
+# Download npm dependencies
 load("@build_bazel_rules_nodejs//:defs.bzl", "yarn_install")
 
 yarn_install(
