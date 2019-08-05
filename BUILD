@@ -1,20 +1,21 @@
 package(default_visibility = ["//visibility:public"])
 
-load("@npm_bazel_typescript//:index.bzl", "ts_library")
-
 # load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
 
-# see https://github.com/bazelbuild/rules_nodejs/blob/master/packages/typescript/docs/install.md
+# # see https://github.com/bazelbuild/rules_nodejs/blob/master/packages/typescript/docs/install.md
 # nodejs_binary(
 #   name = "@bazel/typescript/tsc_wrapped",
-#   entry_point = "@bazel/typescript/internal/tsc_wrapped/tsc_wrapped.js",
-#   # Point bazel to your node_modules to find the entry point
-#   node_modules = "//:node_modules",
+#   entry_point = "//:node_modules/@bazel/typescript/internal/tsc_wrapped/tsc_wrapped.js",
+#   data = [
+#     "@npm//typescript",
+#   ],
 # )
+
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
 
 ts_library(
   name = "castle",
-  srcs = glob(["src/**/*.ts"]),
+  srcs = glob(["server/**/*.ts"]),
   # tsconfig = ":tsconfig.json",
   # compiler = "//:@bazel/typescript/tsc_wrapped",
   runtime = "nodejs",

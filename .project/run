@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd ../bazel-bin
+cd ../bazel-bin/server
 node index.js
