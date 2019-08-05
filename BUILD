@@ -5,7 +5,8 @@ load("@npm_bazel_typescript//:index.bzl", "ts_library")
 ts_library(
   name = "castle",
   srcs = ["index.ts"],
-  # compiler = "npx tsc",
+  # compiler = "//:node_modules/.bin/tsc",
+  # compiler = "//.meta/bazel-rules-nodejs/release/npm_bazel_typescript/internal:tsc_wrapped/tsc_wrapped",
   # tsconfig = ":tsconfig.json",
   runtime = "nodejs",
   rh_target_override = "es2018",

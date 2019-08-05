@@ -26,3 +26,6 @@ https://github.com/niftylettuce/frisbee
 
 
 https://github.com/pashky/restclient.el
+
+
+https://github.com/whitecolor/yalc

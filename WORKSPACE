@@ -32,7 +32,7 @@ git_repository(
 
 local_repository(
   name = "build_bazel_rules_nodejs",
-  path = metaPath + "/bazel-nodejs-rules/release/build_bazel_rules_nodejs/release",
+  path = metaPath + "/bazel-rules-nodejs/release/build_bazel_rules_nodejs/release",
 )
 
 load("@build_bazel_rules_nodejs//:defs.bzl", "yarn_install")
@@ -41,6 +41,8 @@ yarn_install(
   name = "npm",
   package_json = "//:package.json",
   yarn_lock = "//:yarn.lock",
+  always_hide_bazel_files = True,
+  # use_global_yarn_cache = False,
 )
 
 # load("@npm//:install_bazel_dependencies.bzl", "install_bazel_dependencies")
@@ -49,9 +51,18 @@ yarn_install(
 
 new_local_repository(
   name = "npm_bazel_typescript",
-  path = metaPath + "/bazel-nodejs-rules/release/npm_bazel_typescript",
-  build_file = metaPath + "/bazel-nodejs-rules/release/npm_bazel_typescript/BUILD.bazel",
+  path = metaPath + "/bazel-rules-nodejs/release/npm_bazel_typescript",
+  build_file = metaPath + \
+    "/bazel-rules-nodejs/release/npm_bazel_typescript/BUILD.bazel",
 )
+
+# filegroup(
+#   name = "generate_build_file",
+#   srcs = [
+#     "generate_build_file.js",
+#   ],
+#   visibility = ["//internal:__subpackages__"],
+# )
 
 load("@npm_bazel_typescript//:index.bzl", "ts_setup_workspace")
 
