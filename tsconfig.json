@@ -23,9 +23,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
-  "bazelOptions": {
-    "devmodeTargetOverride": "es2018"
-  },
   "exclude": [
     "node_modules",
     ".project"
