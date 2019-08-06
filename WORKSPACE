@@ -49,12 +49,41 @@ yarn_install(
 
 # install_bazel_dependencies()
 
-new_local_repository(
-  name = "npm_bazel_typescript",
-  path = metaPath + "/bazel-rules-nodejs/release/npm_bazel_typescript",
-  build_file = metaPath + \
-    "/bazel-rules-nodejs/release/npm_bazel_typescript/BUILD.bazel",
+local_repository(
+  name = "npm_bazel_jasmine",
+  path = metaPath + "/bazel-rules-nodejs/packages/jasmine/src",
 )
+
+local_repository(
+  name = "npm_bazel_typescript",
+  path = metaPath + "/bazel-rules-nodejs/packages/typescript/src",
+)
+
+local_repository(
+  name = "build_bazel_rules_typescript",
+  path = metaPath + "/bazel-rules-typescript",
+)
+
+git_repository(
+  name = "io_bazel_rules_go",
+  remote = "https://github.com/bazelbuild/rules_go.git",
+  tag = "0.18.5",
+  # tag = "0.19.1",
+)
+
+load(
+  "@io_bazel_rules_go//go/private:compat/compat_repo.bzl",
+  "go_rules_compat",
+)
+
+go_rules_compat(name = "io_bazel_rules_go_compat")
+
+# new_local_repository(
+#   name = "npm_bazel_typescript",
+#   path = metaPath + "/bazel-rules-nodejs/release/npm_bazel_typescript",
+#   build_file = metaPath + \
+#     "/bazel-rules-nodejs/release/npm_bazel_typescript/BUILD.bazel",
+# )
 
 # filegroup(
 #   name = "generate_build_file",
@@ -64,6 +93,6 @@ new_local_repository(
 #   visibility = ["//internal:__subpackages__"],
 # )
 
-load("@npm_bazel_typescript//:index.bzl", "ts_setup_workspace")
+# load("@npm_bazel_typescript//:index.bzl", "ts_setup_workspace")
 
-ts_setup_workspace()
+# ts_setup_workspace()
