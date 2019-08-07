@@ -25,16 +25,6 @@ git_repository(
 #   shallow_since = "1563926047 -0700",
 # )
 
-# local_repository(
-#   name = "build_bazel_rules_nodejs",
-#   path = metaPath + "/bazel-nodejs-rules",
-# )
-
-# local_repository(
-#   name = "build_bazel_rules_nodejs",
-#   path = metaPath + "/bazel-rules-nodejs/release/build_bazel_rules_nodejs/release",
-# )
-
 local_repository(
   name = "build_bazel_rules_nodejs",
   path = metaPath + "/bazel-rules-nodejs",
@@ -46,7 +36,7 @@ yarn_install(
   name = "npm",
   package_json = "//:package.json",
   yarn_lock = "//:yarn.lock",
-  always_hide_bazel_files = True,
+  # always_hide_bazel_files = True,
   # use_global_yarn_cache = False,
 )
 
@@ -72,8 +62,9 @@ local_repository(
 git_repository(
   name = "io_bazel_rules_go",
   remote = "https://github.com/bazelbuild/rules_go.git",
-  # tag = "0.18.5",
-  tag = "0.19.1",
+  # tag = "0.19.1",
+  commit = "6dae44dc5cabef47049490f53844343c3236c8cb",
+  shallow_since = "1563563036 -0400"
 )
 
 load(

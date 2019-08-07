@@ -4,7 +4,7 @@
     "esModuleInterop": true,
     "maxNodeModuleJsDepth": 10,
     "target": "es2018",
-    "lib": ["es2018", "esnext.asynciterable"],
+    "lib": ["es2018", "dom", "esnext.asynciterable"],
     "sourceMap": true,
     "moduleResolution": "node",
     "newLine": "lf",
