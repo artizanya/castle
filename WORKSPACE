@@ -2,7 +2,9 @@
 
 workspace(
   name = "castle",
-  managed_directories = {"@npm": ["node_modules"]},
+  managed_directories = {
+    "@npm": ["node_modules"]
+  },
 )
 
 metaPath = __workspace_dir__ + "/.meta"
@@ -40,55 +42,30 @@ yarn_install(
   # use_global_yarn_cache = False,
 )
 
-# load("@npm//:install_bazel_dependencies.bzl", "install_bazel_dependencies")
-
-# install_bazel_dependencies()
-
-local_repository(
-  name = "npm_bazel_jasmine",
-  path = metaPath + "/bazel-rules-nodejs/packages/jasmine/src",
-)
-
-local_repository(
-  name = "npm_bazel_typescript",
-  path = metaPath + "/bazel-rules-nodejs/packages/typescript/src",
-)
-
-local_repository(
-  name = "build_bazel_rules_typescript",
-  path = metaPath + "/bazel-rules-typescript",
-)
-
-git_repository(
-  name = "io_bazel_rules_go",
-  remote = "https://github.com/bazelbuild/rules_go.git",
-  # tag = "0.19.1",
-  commit = "6dae44dc5cabef47049490f53844343c3236c8cb",
-  shallow_since = "1563563036 -0400"
+yarn_install(
+  name = "castle_npm",
+  package_json = "//:package.json",
+  yarn_lock = "//:yarn.lock",
+  # always_hide_bazel_files = True,
+  # use_global_yarn_cache = False,
 )
 
 load(
-  "@io_bazel_rules_go//go/private:compat/compat_repo.bzl",
-  "go_rules_compat",
-)
+  "//:tsc_wrapped_dependencies.bzl",
+  "tsc_wrapped_dependencies")
 
-go_rules_compat(name = "io_bazel_rules_go_compat")
+tsc_wrapped_dependencies(metaPath)
 
-# new_local_repository(
-#   name = "npm_bazel_typescript",
-#   path = metaPath + "/bazel-rules-nodejs/release/npm_bazel_typescript",
-#   build_file = metaPath + \
-#     "/bazel-rules-nodejs/release/npm_bazel_typescript/BUILD.bazel",
-# )
+load(
+  "@io_bazel_rules_go//go:deps.bzl",
+  "go_rules_dependencies")
 
-# filegroup(
-#   name = "generate_build_file",
-#   srcs = [
-#     "generate_build_file.js",
-#   ],
-#   visibility = ["//internal:__subpackages__"],
-# )
+go_rules_dependencies()
 
-# load("@npm_bazel_typescript//:index.bzl", "ts_setup_workspace")
-
-# ts_setup_workspace()
+# or
+#
+# load(
+#   "@io_bazel_rules_go//go/private:compat/compat_repo.bzl",
+#   "go_rules_compat")
+#
+# go_rules_compat(name = "io_bazel_rules_go_compat")
