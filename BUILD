@@ -8,10 +8,11 @@ load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
 # see https://github.com/bazelbuild/rules_nodejs/blob/master/packages/typescript/docs/install.md
 nodejs_binary(
   name = "@bazel/typescript/tsc_wrapped",
-  entry_point = "//:node_modules/@bazel/typescript/internal/tsc_wrapped/tsc_wrapped.js",
+  # entry_point = "//:node_modules/@bazel/typescript/internal/tsc_wrapped/tsc_wrapped.js",
+  entry_point = "//:.meta/bazel-rules-nodejs/release/npm_bazel_typescript/internal/tsc_wrapped/tsc_wrapped.js",
   data = [
     "@npm//protobufjs",
-    # "@npm//source-map-support",
+    "@npm//source-map-support",
     "@npm//tsutils",
     "@npm//typescript",
     "//:node_modules/@bazel/typescript/internal/tsc_wrapped",
