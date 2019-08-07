@@ -30,9 +30,14 @@ git_repository(
 #   path = metaPath + "/bazel-nodejs-rules",
 # )
 
+# local_repository(
+#   name = "build_bazel_rules_nodejs",
+#   path = metaPath + "/bazel-rules-nodejs/release/build_bazel_rules_nodejs/release",
+# )
+
 local_repository(
   name = "build_bazel_rules_nodejs",
-  path = metaPath + "/bazel-rules-nodejs/release/build_bazel_rules_nodejs/release",
+  path = metaPath + "/bazel-rules-nodejs",
 )
 
 load("@build_bazel_rules_nodejs//:defs.bzl", "yarn_install")
@@ -67,8 +72,8 @@ local_repository(
 git_repository(
   name = "io_bazel_rules_go",
   remote = "https://github.com/bazelbuild/rules_go.git",
-  tag = "0.18.5",
-  # tag = "0.19.1",
+  # tag = "0.18.5",
+  tag = "0.19.1",
 )
 
 load(
