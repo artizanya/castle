@@ -32,8 +32,7 @@ metaPath = __workspace_dir__ + "/.meta"
 
 local_repository(
   name = "build_bazel_rules_nodejs",
-  path = metaPath +
-    "/bazel-rules-nodejs/release/build_bazel_rules_nodejs/release",
+  path = metaPath + "/build_bazel_rules_nodejs",
 )
 
 load("@build_bazel_rules_nodejs//:defs.bzl", "yarn_install")
@@ -44,21 +43,15 @@ yarn_install(
   yarn_lock = "//:yarn.lock",
 )
 
-local_repository(
-  name = "build_bazel_rules_typescript",
-  path = metaPath +
-    "/bazel-rules-typescript",
-)
-
-local_repository(
-  name = "npm_bazel_typescript",
-  path = metaPath +
-    "/bazel-rules-nodejs/packages/typescript/src",
-)
+# Avoid Bazel dependency on npm
 
 # load("@npm//:install_bazel_dependencies.bzl", "install_bazel_dependencies")
 
 # install_bazel_dependencies()
+
+load("//:dependencies.bzl", "ts_workspace_dependencies")
+
+ts_workspace_dependencies(metaPath)
 
 load("@npm_bazel_typescript//:index.bzl", "ts_setup_workspace")
 
