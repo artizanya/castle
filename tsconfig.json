@@ -8,7 +8,6 @@
     "sourceMap": true,
     "moduleResolution": "node",
     "newLine": "lf",
-    "rootDir": ".",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -21,10 +20,14 @@
     "removeComments": true,
     "strict": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "rootDir": "server"
   },
   "exclude": [
-    "node_modules",
-    ".project"
+    ".meta",
+    ".git",
+    ".project",
+    "bazel-*",
+    "node_modules"
   ]
 }

@@ -1,3 +1,6 @@
+// Hey Emacs, this is -*- coding: utf-8 -*-
+/* global module */
+
 module.exports = {
   // sourceType: 'script',
   // sourceType: 'module',
