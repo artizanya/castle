@@ -27,7 +27,7 @@ landDb.useBasicAuth('root', 'artizan0');
 
 const elements = landDb.collection('land_elements');
 
-(async function(): Promise<void> {
+(async function (): Promise<void> {
   const element = await elements.firstExample({
     _key: '0005',
   });
