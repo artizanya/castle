@@ -1,0 +1,8 @@
+[submodule ".meta/bazel-rules-nodejs"]
+	path = .meta/bazel-rules-nodejs
+	url = https://github.com/ramblehead/bazel-rules-nodejs.git
+	branch = rh_overrides
+[submodule ".meta/bazel-rules-typescript"]
+	path = .meta/bazel-rules-typescript
+	url = https://github.com/ramblehead/bazel-rules-typescript.git
+	branch = rh_overrides
