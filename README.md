@@ -1,10 +1,9 @@
 # castle-bazel
 
-```castle-bazel``` project is an experimental project to validate the following technologies and find if they can be used together:
+```castle-bazel``` is an experimental project to validate the following technologies and to find if they can be used together:
 
 * bazel [node](https://github.com/ramblehead/bazel-rules-nodejs) and [typescript](https://github.com/bazelbuild/rules_typescript) rules
-* typescript [experimentalDecorators](https://www.typescriptlang.org/docs/handbook/decorators.html)
-* [type-graphql](https://github.com/19majkel94/type-graphql)
+* typescript [experimentalDecorators](https://www.typescriptlang.org/docs/handbook/decorators.html) with [type-graphql](https://github.com/19majkel94/type-graphql)
 * [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
 * [koa](https://github.com/koajs/koa)
 * [apollo-server-koa](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-koa)
