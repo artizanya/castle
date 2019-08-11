@@ -15,7 +15,7 @@ Installation instructions:
 
 ```bash
 # The following git command should pull this castle repository
-# and its git modules (in castle/.module directory):
+# and its git modules (in castle/.meta directory):
 #   https://github.com/ramblehead/bazel-rules-nodejs/tree/rh_overrides
 #   https://github.com/ramblehead/bazel-rules-typescript/tree/rh_overrides
 git clone --recursive https://github.com/artizanya/castle.git
