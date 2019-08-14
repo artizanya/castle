@@ -1,1 +1,2 @@
-common --experimental_allow_incremental_repository_updates
+common --experimental_allow_incremental_repository_updates \
+       --define rh_module_override=commonjs --define rh_target_override=es2018
