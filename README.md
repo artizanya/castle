@@ -18,7 +18,7 @@ Installation instructions:
 # and its git modules (in castle/.meta directory):
 #   https://github.com/ramblehead/bazel-rules-nodejs/tree/rh_overrides
 #   https://github.com/ramblehead/bazel-rules-typescript/tree/rh_overrides
-git clone --recursive https://github.com/artizanya/castle.git
+git clone --recursive https://github.com/artizanya/castle-bazel.git
 cd castle/.project
 ./make-bazel-rules-nodejs
 ./make
