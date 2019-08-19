@@ -2,22 +2,6 @@
 
 package(default_visibility = ["//visibility:public"])
 
-load(
-  "@npm_bazel_typescript//:index.bzl",
-  "rh_target",
-  "rh_module",
-)
-
-rh_target(
-  name = "rh_target_override",
-  build_setting_default = "es2018",
-)
-
-rh_module(
-  name = "rh_module_override",
-  build_setting_default = "commonjs",
-)
-
 # The following commented load() should fail!
 # So it is impossible to accidentally load "ts_library"
 # from "@npm_bazel_typescript//:index.bzl":
