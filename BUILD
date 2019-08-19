@@ -5,7 +5,7 @@ package(default_visibility = ["//visibility:public"])
 load(
   "@npm_bazel_typescript//:index.bzl",
   "rh_target",
-  "rh_module"
+  "rh_module",
 )
 
 rh_target(
