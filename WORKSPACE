@@ -19,25 +19,16 @@ git_repository(
 load("@rh_bazel_utils//:index.bzl", "select_repository")
 
 select_repository(
-  key = "local",
+  # key = "local",
   name = "build_bazel_rules_nodejs",
   repositories = {
-    # This selection does not work yet - need to learn how to apply patch:
-    # https://github.com/bazelbuild/rules_nodejs/issues/998#issuecomment-521317102
     "default": {
       "rule": git_repository,
       "kwargs": {
-        "remote": "https://github.com/bazelbuild/rules_nodejs.git",
-        # tag = "0.34.0",
-        "commit": "2a0be492c5d506665798f04673ab1a646c883626",
-        "shallow_since": "1563926047 -0700",
-      },
-    },
-    "rh_github_forked": {
-      "rule": git_repository,
-      "kwargs": {
         "remote": "https://github.com/ramblehead/bazel-rules-nodejs.git",
-        "branch": "rh_overrides",
+        # "branch": "build_bazel_rules_nodejs-0.36.0-rh_overrides",
+        "commit": "1e4b42d40341a4051424ad5c24ee298f027b638c",
+        "shallow_since": "1566219881 +0100",
       },
     },
     "local": {

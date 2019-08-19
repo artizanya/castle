@@ -155,8 +155,9 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bazel/typescript@file:.meta/bazel-rules-nodejs/release/npm_bazel_typescript":
+"@bazel/typescript@https://github.com/ramblehead/bazel-rules-nodejs.git#npm_bazel_typescript-0.36.0-rh_overrides":
   version "1.2.3"
+  resolved "https://github.com/ramblehead/bazel-rules-nodejs.git#3ca4dab4425343e2c2b2ec98fe736da3f00ed367"
   dependencies:
     protobufjs "6.8.8"
     semver "5.6.0"
