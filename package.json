@@ -16,7 +16,7 @@
     "extends": "./eslint.config.js"
   },
   "dependencies": {
-    "apollo-server-koa": "^2.7.0",
+    "apollo-server-koa": "^2.14.2",
     "arangojs": "^6.10.0",
     "graphql": "^14.4.2",
     "koa": "^2.7.0",
